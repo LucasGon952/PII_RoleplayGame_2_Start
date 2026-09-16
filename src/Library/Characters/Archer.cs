@@ -1,9 +1,31 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Archer
+public class Archer : ICharacter
 {
     private int health = 100;
 
+    public List<IAttackItem> ItemsAtaque { get; } = new List<IAttackItem>();
+    public List<IDefenseItem> ItemsDefensa { get; } = new List<IDefenseItem>();
+
+    public void AgregarItemAtaque (IAttackItem item)
+    {
+        ItemsAtaque.Add(item);
+    }
+
+    public void QuitarAgregarItemAtaque (IAttackItem item)
+    {
+        ItemsAtaque.Add(item);
+    }
+
+    public void AgregarItemDefensa (IDefenseItem item)
+    {
+        ItemsDefensa.Add(item);
+    }
+
+    public void QuitarAgregarItemDefensa (IDefenseItem item)
+    {
+        ItemsDefensa.Add(item);
+    }
     public Archer(string name)
     {
         this.Name = name;
@@ -37,7 +59,7 @@ public class Archer
         {
             return this.health;
         }
-        private set
+        public set
         {
             this.health = value < 0 ? 0 : value;
         }
