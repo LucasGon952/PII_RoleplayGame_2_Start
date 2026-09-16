@@ -1,12 +1,16 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Shield
+public class Shield : IDefenseItem
 {
-    public int DefenseValue
+    public string Name { get; set;}
+    public int DefenseValue {get; set;}
+
+    public void SetName(string name)
     {
-        get
-        {
-            return 14;
-        }
+        Name = name;
     }
+    public void SetDefenseValue(int defenseValue)
+    {
+        DefenseValue = defenseValue;
+    }   
 }
