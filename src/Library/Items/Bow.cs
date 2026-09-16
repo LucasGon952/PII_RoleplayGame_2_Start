@@ -1,12 +1,17 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Bow
+public class Bow : IAttackItem
 {
-    public int AttackValue 
+    public string Name { get; set; }
+    public int AttackValue { get; set; }
+
+    public void SetName(string name)
     {
-        get
-        {
-            return 15;
-        } 
+        Name = name;
+    }
+
+    public void SetAttackValue(int attackValue)
+    {
+        AttackValue = attackValue;
     }
 }
